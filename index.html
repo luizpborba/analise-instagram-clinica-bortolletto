@@ -172,10 +172,35 @@ footer h2{font-size:13px;font-family:var(--f-mono);font-weight:600;letter-spacin
 
 .svg-mob{display:none}
 
-@media (min-width:701px){
+@media (min-width:921px){
   table.t9{font-size:13.8px;min-width:0}
   table.t9 th,table.t9 td{padding-left:11px;padding-right:11px}
   table.t9 .chip{font-size:9px;padding:3px 6px}
+}
+
+/* Tabelas viram cartoes empilhados assim que deixam de caber inteiras */
+@media (max-width:920px){
+  .tablewrap{border:none;background:transparent;box-shadow:none;overflow-x:visible;border-radius:0}
+  table{min-width:0;display:block;font-size:15px}
+  thead{display:none}
+  tbody{display:block}
+  tbody tr{display:block;background:var(--surface);border:1px solid var(--hair);border-radius:3px;margin-bottom:12px;overflow:hidden}
+  tbody tr:last-child{margin-bottom:0}
+  td{display:flex;justify-content:space-between;align-items:baseline;gap:14px;border-bottom:1px solid var(--hair);padding:9px 15px;text-align:right}
+  tbody tr td:last-child{border-bottom:none}
+  td::before{
+    content:attr(data-label);font-family:var(--f-mono);font-size:9.5px;letter-spacing:.09em;
+    text-transform:uppercase;color:var(--muted);flex:0 0 auto;text-align:left;padding-top:3px;
+  }
+  td.rowhead{display:block;background:var(--surface-2);padding:12px 15px;text-align:left;font-size:15.5px;border-bottom:1px solid var(--hair)}
+  td.rowhead::before{display:none}
+  td.rowhead .dim{display:block;font-size:12.5px;margin-top:2px;font-family:var(--f-mono)}
+  td br{display:none}
+  td.num.dim ~ td.num.dim{display:none}
+  td.num.dim{border-bottom:none}
+  tr.self td{background:transparent}
+  tr.self td.rowhead{background:var(--teal-pale);box-shadow:inset 3px 0 0 var(--teal)}
+  tr.self{border-color:var(--teal-soft)}
 }
 
 @media (max-width:700px){
@@ -211,27 +236,8 @@ footer h2{font-size:13px;font-family:var(--f-mono);font-weight:600;letter-spacin
   .legend{font-size:10.5px;gap:6px 14px;margin-top:13px}
   figcaption{font-size:13px}
 
-  .tablewrap{border:none;background:transparent;box-shadow:none;overflow-x:visible;border-radius:0}
-  table{min-width:0;display:block;font-size:15px}
-  thead{display:none}
-  tbody{display:block}
-  tbody tr{display:block;background:var(--surface);border:1px solid var(--hair);border-radius:3px;margin-bottom:12px;overflow:hidden}
-  tbody tr:last-child{margin-bottom:0}
-  td{display:flex;justify-content:space-between;align-items:baseline;gap:14px;border-bottom:1px solid var(--hair);padding:9px 15px;text-align:right}
-  tbody tr td:last-child{border-bottom:none}
-  td::before{
-    content:attr(data-label);font-family:var(--f-mono);font-size:9.5px;letter-spacing:.09em;
-    text-transform:uppercase;color:var(--muted);flex:0 0 auto;text-align:left;padding-top:3px;
-  }
-  td.rowhead{display:block;background:var(--surface-2);padding:12px 15px;text-align:left;font-size:15.5px;border-bottom:1px solid var(--hair)}
-  td.rowhead::before{display:none}
-  td.rowhead .dim{display:block;font-size:12.5px;margin-top:2px;font-family:var(--f-mono)}
-  td br{display:none}
-  td.num.dim ~ td.num.dim{display:none}
-  td.num.dim{border-bottom:none}
-  tr.self td{background:transparent}
-  tr.self td.rowhead{background:var(--teal-pale);box-shadow:inset 3px 0 0 var(--teal)}
-  tr.self{border-color:var(--teal-soft)}
+  table{font-size:14.5px}
+  td.rowhead{font-size:15px}
 
   .cards{gap:14px}
   .card{padding:18px 17px;gap:9px}
