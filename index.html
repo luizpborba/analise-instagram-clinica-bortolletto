@@ -148,7 +148,8 @@ ul.tight li{margin-bottom:8px;font-size:15.5px;color:var(--ink-2);line-height:1.
 ul.tight li:last-child{margin-bottom:0}
 ul.tight li b{color:var(--ink);font-weight:600;font-family:var(--f-display)}
 
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+@media (max-width:700px){.cards{grid-template-columns:1fr}}
 .card{background:var(--surface);border:1px solid var(--hair);border-radius:3px;padding:20px 22px;display:flex;flex-direction:column;gap:10px}
 .card .rank{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 .card h4{font-size:17.5px}
